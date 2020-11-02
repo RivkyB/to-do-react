@@ -9,20 +9,18 @@ function App() {
   const [status, setStatus] = useState("all");
   const [filterToDos, setFilterToDos] = useState([]);
 
-  const getLocalToDos = () => {
-    if (localStorage.getItem("todos" === null)) {
-      const json = localStorage.getItem("todos");
-      const todos = JSON.parse(json) || [];
-      setToDos({ todos });
-    } else {
-      let todoLocal = JSON.parse(localStorage.getItem("todos"));
-      setToDos(todoLocal);
-    }
-  };
+  // const getLocalToDos = () => {
+  //   if (localStorage.getItem("todos" === null)) {
+  //     localStorage.setItem("todos", JSON.stringify([]));
+  //   } else {
+  //     let todoLocal = JSON.parse(localStorage.getItem("todos"));
+  //     setToDos(todoLocal);
+  //   }
+  // };
 
-  useEffect(() => {
-    getLocalToDos();
-  }, []);
+  // useEffect(() => {
+  //   getLocalToDos();
+  // }, []);
 
   useEffect(() => {
     filterHandler();
