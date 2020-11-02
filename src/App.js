@@ -11,7 +11,9 @@ function App() {
 
   const getLocalToDos = () => {
     if (localStorage.getItem("todos" === null)) {
-      localStorage.setItem("todos", JSON.stringify([]));
+      const json = localStorage.getItem("todos");
+      const todos = JSON.parse(json) || [];
+      setToDos({ todos });
     } else {
       let todoLocal = JSON.parse(localStorage.getItem("todos"));
       setToDos(todoLocal);
